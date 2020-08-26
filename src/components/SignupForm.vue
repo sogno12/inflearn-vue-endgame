@@ -1,27 +1,29 @@
 <template>
-  <form @submit.prevent="submitForm">
-    <div>
-      <label for="username">id: </label>
-      <input
-        id="username"
-        type="text"
-        v-model="username"
-        placeholder="이메일 형식으로 입력"
-      />
+  <div class="contents">
+    <div class="form-wrapper form-wrapper-sm">
+      <form @submit.prevent="submitForm" class="form">
+        <div>
+          <label for="username">id: </label>
+          <input id="username" type="text" v-model="username" />
+        </div>
+        <div>
+          <label for="password">pw: </label>
+          <input id="password" type="text" v-model="password" />
+        </div>
+        <div>
+          <label for="nickname">nickname: </label>
+          <input id="nickname" type="text" v-model="nickname" />
+        </div>
+        <button
+          :disabled="!isUsernameValid || !password || !nickname"
+          class="btn"
+        >
+          회원가입
+        </button>
+      </form>
+      <p class="log">{{ logMessage }}</p>
     </div>
-    <div>
-      <label for="password">pw: </label>
-      <input id="password" type="text" v-model="password" />
-    </div>
-    <div>
-      <label for="nickname">nickname: </label>
-      <input id="nickname" type="text" v-model="nickname" />
-    </div>
-    <button :disabled="!isUsernameValid || !password || !nickname">
-      Sign Up
-    </button>
-    <p>{{ logMessage }}</p>
-  </form>
+  </div>
 </template>
 
 <script>
