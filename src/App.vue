@@ -1,16 +1,19 @@
 <template>
   <div>
-    <header>
-      <router-link to="/login">로그인</router-link> |
-      <router-link to="/signup">회원가입</router-link>
-    </header>
+    <app-header></app-header>
     <!--실제보여지는부분-->
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {};
+import AppHeader from '@/components/common/AppHeader.vue';
+
+export default {
+  components: {
+    AppHeader,
+  },
+};
 </script>
 
 <style></style>
