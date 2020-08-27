@@ -29,6 +29,10 @@ export default new VueRouter({
       component: () => import('@/views/PostAddPage.vue'),
     },
     {
+      path: '/post/:id',
+      component: () => import('@/views/PostEditPage.vue'),
+    },
+    {
       path: '*', // 위의 path에 없는 경우 이쪽으로 모두 빠짐
       component: () => import('@/views/NotFoundPage.vue'),
     },
